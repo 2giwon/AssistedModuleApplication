@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -36,6 +37,16 @@ dependencies {
     implementation Dependencies.CORE_KTX
     implementation Dependencies.MATERIAL
     implementation Dependencies.CONSTRAINT_LAYOUT
+
+    // dagger, dagger-android
+    implementation Dependencies.DAGGER2
+    implementation Dependencies.DAGGER2_ANDROID
+    implementation Dependencies.DAGGER2_ANDROID_SUPPORT
+    kapt Dependencies.DAGGER2_COMPILER_KAPT
+    kapt Dependencies.DAGGER2_ANDROID_PROCESSOR_KAPT
+
+    implementation Dependencies.DAGGER2_ASSISTED_INJECT_ANNOTATION
+    kapt Dependencies.DAGGER2_ASSISTED_INJECT_PROCESSOR_KAPT
 
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
