@@ -1,13 +1,14 @@
 object Version {
     const val KOTLIN_VER = "1.5.31"
-    const val DAGGER2_VER = "2.27"
-    const val ASSISTED_INJECT_VER = "0.5.2"
+    const val HILT = "2.38.1"
 }
 
 object ProjectConfig {
     const val GRADLE = "com.android.tools.build:gradle:7.0.3"
     const val KOTLIN_GRADLE_PLUGIN =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN_VER}"
+    const val HILT_ANDROID_GRADLE_PLUGIN =
+        "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT}"
 }
 
 object AndroidConfig {
@@ -26,20 +27,18 @@ object Dependencies {
     const val MATERIAL = "com.google.android.material:material:1.6.0"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.1.4"
 
+    const val HILT_ANDROID = "com.google.dagger:hilt-android:${Version.HILT}"
+    const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Version.HILT}"
+
+    const val HILT_COMPILER = "com.google.dagger:hilt-compiler:${Version.HILT}"
+    const val HILT_CORE = "com.google.dagger:hilt-core:${Version.HILT}"
+
     const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
 
     const val ACTIVITY_EXT = "androidx.activity:activity-ktx:1.3.1"
     const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.3.6"
 
-    const val DAGGER2 = "com.google.dagger:dagger:${Version.DAGGER2_VER}"
-    const val DAGGER2_ANDROID = "com.google.dagger:dagger-android:${Version.DAGGER2_VER}"
-    const val DAGGER2_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:${Version.DAGGER2_VER}"
 
-    const val DAGGER2_COMPILER_KAPT = "com.google.dagger:dagger-compiler:${Version.DAGGER2_VER}"
-    const val DAGGER2_ANDROID_PROCESSOR_KAPT = "com.google.dagger:dagger-android-processor:${Version.DAGGER2_VER}"
-
-    const val DAGGER2_ASSISTED_INJECT_ANNOTATION = "com.squareup.inject:assisted-inject-annotations-dagger2:${Version.ASSISTED_INJECT_VER}"
-    const val DAGGER2_ASSISTED_INJECT_PROCESSOR_KAPT = "com.squareup.inject:assisted-inject-processor-dagger2:${Version.ASSISTED_INJECT_VER}"
 }
 
 object TestConfig {

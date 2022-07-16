@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -30,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -37,16 +41,10 @@ dependencies {
     implementation Dependencies.CORE_KTX
     implementation Dependencies.MATERIAL
     implementation Dependencies.CONSTRAINT_LAYOUT
+    implementation Dependencies.FRAGMENT_KTX
 
-    // dagger, dagger-android
-    implementation Dependencies.DAGGER2
-    implementation Dependencies.DAGGER2_ANDROID
-    implementation Dependencies.DAGGER2_ANDROID_SUPPORT
-    kapt Dependencies.DAGGER2_COMPILER_KAPT
-    kapt Dependencies.DAGGER2_ANDROID_PROCESSOR_KAPT
-
-    implementation Dependencies.DAGGER2_ASSISTED_INJECT_ANNOTATION
-    kapt Dependencies.DAGGER2_ASSISTED_INJECT_PROCESSOR_KAPT
+    implementation Dependencies.HILT_ANDROID
+    kapt Dependencies.HILT_COMPILER
 
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
